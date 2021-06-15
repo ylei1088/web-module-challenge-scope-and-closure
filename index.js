@@ -87,30 +87,40 @@ Use the finalScore function below to do the following:
 }
 */
 
-function finalScore(inningCB) {
-  return {
-    Home: inningCB(),
-    Away: inningCB(),
-  };
-}
+// function finalScore(inningCB) {
+//   return {
+//     Home: inningCB(),
+//     Away: inningCB(),
+//   };
+// }
 
+// console.log(finalScore(inning, 9));
+
+function finalScore(inningCB, number) {
+  let score = {
+    Home: 0,
+    Away: 0,
+  };
+  for (let i = 0; i < number; i++) {
+    score.Home += inningCB();
+    score.Away += inningCB();
+  }
+  return score;
+}
 console.log(finalScore(inning, 9));
 
-// function finalScore(inningCB, gameCB) {
-
-//   // let getGame = [];
-//   // let homeScore = 0;
-//   // let awayScore = 0;
-//   // for (let i = 0; i < 9; i++) {
-//   //   const currentScore = gameCB(inningCB);
-//   //   homeScore = homeScore + currentScore.Home;
-//   //   awayScore = awayScore + currentScore.Away;
-//   //   getGame.push(
-//   //     `Period ${i + 1}, Away: ${currentScore.Away} - Home: ${currentScore.Home}`
-//   //   );
-//   // }
-//   // return getGame;
+// let getGame = [];
+// let homeScore = 0;
+// let awayScore = 0;
+// for (let i = 0; i < 9; i++) {
+//   const currentScore = gameCB(inningCB);
+//   homeScore = homeScore + currentScore.Home;
+//   awayScore = awayScore + currentScore.Away;
+//   getGame.push(
+//     `Period ${i + 1}, Away: ${currentScore.Away} - Home: ${currentScore.Home}`
+//   );
 // }
+// return getGame;
 
 // console.log(finalScore(inning, finalGame));
 
